@@ -1,5 +1,31 @@
 import {housingData} from './dataBase.js'
-// console.log(housingData)
+
+const sButton = document.querySelector(".submit");
+
+sButton.addEventListener('click', function () {
+ 
+let userType = document.querySelector('.type');
+let userAdd = document.querySelector('.address');
+let userCity = document.querySelector('.city');
+let userState = document.querySelector('.state');
+
+
+
+ let userHousing = {
+    Type: userType.value, 
+    Address: userAdd.value,
+    City: userCity.value,
+    State: userState.value, 
+ };
+
+ 
+housingData.push(userHousing);
+
+
+});
+
+console.log(housingData);
+
 class HouseList {
     constructor(){
         this.list = [];
@@ -21,12 +47,9 @@ class Property {
 
 
     }
-    renderHC(){
+    renderHC(info){
             this.ele.append(this.createCard);
-            //create card element of data base
-            //append card to container
-            //return card
-            //call card
+            this.ele.lastChild.innerHTML=info;
     }
     
 }
@@ -35,6 +58,32 @@ housingData.forEach((element,) => {
     const newProperty = new Property(element.Type, element.Address, element.City, element.State);
 // console.log(newProperty);
     house.addProp(newProperty)
-    newProperty.renderHC();
+    console.log(element);
+    let propToStr = `Type of Housing: ${element.Type}, Address: ${element.Address}, City: ${element.City}, State: ${element.State}`;
+    console.log(propToStr);
+    newProperty.renderHC(propToStr);
 });
-console.log(house.list)
+
+// sButton.addEventListener('click', function () {
+ 
+// let userType = document.querySelector('.type');
+// let userAdd = document.querySelector('.address');
+// let userCity = document.querySelector('.city');
+// let userState = document.querySelector('.state');
+
+
+
+//  let userHousing = {
+//     Type: userType.value, 
+//     Address: userAdd.value,
+//     City: userCity.value,
+//     State: userState.value, 
+//  };
+
+// housingData.push(userHousing);
+
+// });
+
+
+
+
