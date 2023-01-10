@@ -30,6 +30,35 @@ class Property {
     }
     
 }
+
+const sButton = document.querySelector(".submit");
+
+sButton.addEventListener('click', function () {
+
+let userType = document.querySelector('.type');
+let userAdd = document.querySelector('.address');
+let userCity = document.querySelector('.city');
+let userState = document.querySelector('.state');
+
+
+
+ let userHousing = {
+    Type: userType.value, 
+    Address: userAdd.value,
+    City: userCity.value,
+    State: userState.value, 
+ };
+
+
+housingData.push(userHousing);
+
+
+});
+
+
+
+
+
 let house = new HouseList;
 housingData.forEach((element,) => {
     const newProperty = new Property(element.Type, element.Address, element.City, element.State);
@@ -37,4 +66,7 @@ housingData.forEach((element,) => {
     house.addProp(newProperty)
     newProperty.renderHC();
 });
-console.log(house.list)
+
+// console.log(house.list)
+
+console.log(housingData);
