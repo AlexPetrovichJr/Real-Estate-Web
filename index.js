@@ -78,14 +78,6 @@ class Property {
     }
     
 }
-const dButton = document.querySelector('.dButton');
-
-dButton.addEventListener('click', function(){
-
-});
-
-
-
 
 const sButton = document.querySelector(".submit");
 
@@ -114,6 +106,27 @@ document.body.querySelector("#propertyContainer").innerHTML="";
 propertyBrothers()
 
 });
+
+const dButton = document.querySelector('.dButton');
+
+dButton.addEventListener('click', function(){
+    //if button is selected change this.delete to true
+    const result = house.filter(checkTrue);
+    function checkTrue(){
+        if(house.delete=!house.delete){
+            return true;
+        }
+    }
+
+    //if this.delete is true remove obj from array with filter
+
+    //this will clear previous list of data
+document.body.querySelector("#propertyContainer").innerHTML="";
+//envokes the propertyBrother function to re-populate the list
+propertyBrothers()
+
+});
+
 
 
 
