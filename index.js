@@ -59,8 +59,10 @@ housingData.forEach((element,) => {
 // console.log(newProperty);
     house.addProp(newProperty)
     console.log(element);
+   //turns objects in housing data into a string
     let propToStr = `Type of Housing: ${element.Type}, Address: ${element.Address}, City: ${element.City}, State: ${element.State}`;
     console.log(propToStr);
+    //adds the string info as a argument for renderHC
     newProperty.renderHC(propToStr);
 });
 
